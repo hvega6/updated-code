@@ -1,4 +1,4 @@
-// Part: Dynamic CSV Parsing into a Two-Dimensional Array
+//Dynamic CSV Parsing into a Two-Dimensional Array
 function parseCSVToArray(data) {
     const rows = data.split('\n').map(row => row.trim()).filter(row => row);
     const numColumns = rows[0].split(',').length; // Store the number of columns based on the first row
@@ -25,7 +25,7 @@ const csvData2 = `ID,Name,Occupation,Age
 const parsedData2 = parseCSVToArray(csvData2);
 console.log(parsedData2);
 
-// Part: Transforming Data to Objects
+//Transforming Data to Objects
 
 function transformDataToObjects(dataArray) {
     const headers = dataArray[0].map(header => header.toLowerCase()); // Convert headers to lowercase
@@ -47,7 +47,7 @@ function transformDataToObjects(dataArray) {
 const objectsData = transformDataToObjects(parsedData2);
 console.log(objectsData);
 
-// Part: Manipulating Data
+//Manipulating Data
 
 function manipulateData(dataArray) {
     // Remove the last element
@@ -74,7 +74,7 @@ const { modifiedData, averageAge } = manipulateData(objectsData);
 console.log(modifiedData);
 console.log(`Average Age: ${averageAge}`);
 
-// Part 7: Convert Back to CSV
+//Convert Back to CSV
 
 function convertToCSV(dataArray) {
     const headers = Object.keys(dataArray[0]);
